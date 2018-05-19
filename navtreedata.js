@@ -1,7 +1,6 @@
 var NAVTREE =
 [
   [ "HawkTracer", "index.html", [
-    [ "Tutorial", "tutorial.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],

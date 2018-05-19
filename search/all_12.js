@@ -9,7 +9,5 @@ var searchData=
   ['timeline_2eh',['timeline.h',['../timeline_8h.html',1,'']]],
   ['timeline_5flistener_2eh',['timeline_listener.h',['../timeline__listener_8h.html',1,'']]],
   ['timeline_5flistener_5fcontainer_2eh',['timeline_listener_container.h',['../timeline__listener__container_8h.html',1,'']]],
-  ['tutorial',['Tutorial',['../tutorial.html',1,'']]],
-  ['tutorial_2emd',['tutorial.md',['../tutorial_8md.html',1,'']]],
   ['type_5finfo',['type_info',['../struct___h_t___event_klass.html#a00ac8c7ee0b9253c305825e284f4a404',1,'_HT_EventKlass']]]
 ];
