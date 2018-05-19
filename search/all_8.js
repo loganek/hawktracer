@@ -193,5 +193,6 @@ var searchData=
   ['ht_5ftrue',['HT_TRUE',['../base__types_8h.html#a0d915bcf71f95c0c8738a3cb85078bf8',1,'base_types.h']]],
   ['ht_5funique_5fvar_5fname',['HT_UNIQUE_VAR_NAME',['../macros_8h.html#a9c61d051f8614a91e8bd7723e6bd51c9',1,'macros.h']]],
   ['ht_5funlikely',['HT_UNLIKELY',['../macros_8h.html#ac904e34664142368b1fef727af58631f',1,'macros.h']]],
-  ['ht_5funused',['HT_UNUSED',['../macros_8h.html#a49e04661adf0dee3b6b95e1fcb2acff9',1,'macros.h']]]
+  ['ht_5funused',['HT_UNUSED',['../macros_8h.html#a49e04661adf0dee3b6b95e1fcb2acff9',1,'macros.h']]],
+  ['hawktracer_20documentation',['HawkTracer documentation',['../index.html',1,'']]]
 ];
