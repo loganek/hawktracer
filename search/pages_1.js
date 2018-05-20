@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hawktracer_20documentation',['HawkTracer documentation',['../index.html',1,'']]]
+  ['integrate_20_25hawktracer_20to_20existing_20project',['Integrate %HawkTracer to existing project',['../integration.html',1,'index']]]
 ];

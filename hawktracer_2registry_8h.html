@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HawkTracer: /home/loganek/Documents/hawktracer/repo/lib/include/hawktracer/registry.h File Reference</title>
+<title>HawkTracer: /home/loganek/repos/hawktracer-1/lib/include/hawktracer/registry.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,12 +99,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a600acd9beaa6ba0b1228f125e9c613a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> <a class="el" href="core__events_8h.html#a4c054b84c5e1178e19bb146cf01c8a68">HT_EventKlassId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hawktracer_2registry_8h.html#a600acd9beaa6ba0b1228f125e9c613a4">ht_registry_register_event_klass</a> (<a class="el" href="events_8h.html#a1631a98c9a02156621cda6998d864eb0">HT_EventKlass</a> *event_klass)</td></tr>
 <tr class="memdesc:a600acd9beaa6ba0b1228f125e9c613a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers new event klass in the system, or gets identifier if klass is already registered.  <a href="#a600acd9beaa6ba0b1228f125e9c613a4">More...</a><br /></td></tr>
 <tr class="separator:a600acd9beaa6ba0b1228f125e9c613a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b9bfc6fba279153af603e1c0538c43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hawktracer_2registry_8h.html#a03b9bfc6fba279153af603e1c0538c43">ht_registry_push_klass_info_event</a> (<a class="el" href="timeline_8h.html#a9fbfe949ba846a39b58edb008ee0b93f">HT_Timeline</a> *timeline, <a class="el" href="events_8h.html#a1631a98c9a02156621cda6998d864eb0">HT_EventKlass</a> *klass)</td></tr>
-<tr class="memdesc:a03b9bfc6fba279153af603e1c0538c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes HT_EventKlassInfoEvent and HT_EventKlassFieldInfoEvent events to a timeline which contain a definition of the klass.  <a href="#a03b9bfc6fba279153af603e1c0538c43">More...</a><br /></td></tr>
-<tr class="separator:a03b9bfc6fba279153af603e1c0538c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22d8c718c6a2131a0e0eabc13c0e4cfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hawktracer_2registry_8h.html#a22d8c718c6a2131a0e0eabc13c0e4cfe">ht_registry_push_all_klass_info_events</a> (<a class="el" href="timeline_8h.html#a9fbfe949ba846a39b58edb008ee0b93f">HT_Timeline</a> *timeline)</td></tr>
-<tr class="memdesc:a22d8c718c6a2131a0e0eabc13c0e4cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes HT_EventKlassInfoEvent and HT_EventKlassFieldInfoEvent events to a timeline which contain definitions of all registered klasses.  <a href="#a22d8c718c6a2131a0e0eabc13c0e4cfe">More...</a><br /></td></tr>
-<tr class="separator:a22d8c718c6a2131a0e0eabc13c0e4cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4d40e6ca20f3ccabb9a99a820d27e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hawktracer_2registry_8h.html#a4d4d40e6ca20f3ccabb9a99a820d27e7">ht_registry_push_registry_klasses_to_listener</a> (<a class="el" href="timeline__listener_8h.html#a792da38092f02673cd629d1acfffeca8">HT_TimelineListenerCallback</a> callback, void *listener, <a class="el" href="base__types_8h.html#af51299780e101cf59660b634a5bebfac">HT_Boolean</a> serialize)</td></tr>
+<tr class="memdesc:a4d4d40e6ca20f3ccabb9a99a820d27e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes information about registered event klasses (HT_EventKlassInfoEvent and HT_EventKlassFieldInfoEvent events) directly to a listener.  <a href="#a4d4d40e6ca20f3ccabb9a99a820d27e7">More...</a><br /></td></tr>
+<tr class="separator:a4d4d40e6ca20f3ccabb9a99a820d27e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a028328a4814cefc13f248fef70ca88dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> <a class="el" href="events_8h.html#a1631a98c9a02156621cda6998d864eb0">HT_EventKlass</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hawktracer_2registry_8h.html#a028328a4814cefc13f248fef70ca88dd">ht_registry_get_event_klasses</a> (size_t *out_klass_count)</td></tr>
 <tr class="separator:a028328a4814cefc13f248fef70ca88dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,49 +130,29 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a22d8c718c6a2131a0e0eabc13c0e4cfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22d8c718c6a2131a0e0eabc13c0e4cfe">&#9670;&nbsp;</a></span>ht_registry_push_all_klass_info_events()</h2>
+<a id="a4d4d40e6ca20f3ccabb9a99a820d27e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4d40e6ca20f3ccabb9a99a820d27e7">&#9670;&nbsp;</a></span>ht_registry_push_registry_klasses_to_listener()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void ht_registry_push_all_klass_info_events </td>
+          <td class="memname"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> size_t ht_registry_push_registry_klasses_to_listener </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="timeline_8h.html#a9fbfe949ba846a39b58edb008ee0b93f">HT_Timeline</a> *&#160;</td>
-          <td class="paramname"><em>timeline</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pushes HT_EventKlassInfoEvent and HT_EventKlassFieldInfoEvent events to a timeline which contain definitions of all registered klasses. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">timeline</td><td>the timeline where events are pushed to. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a03b9bfc6fba279153af603e1c0538c43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03b9bfc6fba279153af603e1c0538c43">&#9670;&nbsp;</a></span>ht_registry_push_klass_info_event()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void ht_registry_push_klass_info_event </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="timeline_8h.html#a9fbfe949ba846a39b58edb008ee0b93f">HT_Timeline</a> *&#160;</td>
-          <td class="paramname"><em>timeline</em>, </td>
+          <td class="paramtype"><a class="el" href="timeline__listener_8h.html#a792da38092f02673cd629d1acfffeca8">HT_TimelineListenerCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="events_8h.html#a1631a98c9a02156621cda6998d864eb0">HT_EventKlass</a> *&#160;</td>
-          <td class="paramname"><em>klass</em>&#160;</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="base__types_8h.html#af51299780e101cf59660b634a5bebfac">HT_Boolean</a>&#160;</td>
+          <td class="paramname"><em>serialize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -185,14 +162,16 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pushes HT_EventKlassInfoEvent and HT_EventKlassFieldInfoEvent events to a timeline which contain a definition of the klass. </p>
+<p>Pushes information about registered event klasses (HT_EventKlassInfoEvent and HT_EventKlassFieldInfoEvent events) directly to a listener. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timeline</td><td>the timeline where events are pushed to. </td></tr>
-    <tr><td class="paramname">klass</td><td>a pointer to the klass. </td></tr>
+    <tr><td class="paramname">callback</td><td>the listener callback. </td></tr>
+    <tr><td class="paramname">listener</td><td>a pointer to the listener. </td></tr>
+    <tr><td class="paramname">serialize</td><td>indicates whether events should be serialized before pushing to listener or not.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>number of bytes which have been pushed to a listener. </dd></dl>
 
 </div>
 </div>
@@ -283,7 +262,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_871bbb035339bc335f11cfc2834c029a.html">lib</a></li><li class="navelem"><a class="el" href="dir_e7ac0970baa226414bfff9bcce42e74e.html">include</a></li><li class="navelem"><a class="el" href="dir_0a7e90e84a9f5a66b824942862e322e2.html">hawktracer</a></li><li class="navelem"><a class="el" href="hawktracer_2registry_8h.html">registry.h</a></li>
+    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li><li class="navelem"><a class="el" href="dir_1664bd36a745a898ec6d2a8359b7e115.html">hawktracer</a></li><li class="navelem"><a class="el" href="hawktracer_2registry_8h.html">registry.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
