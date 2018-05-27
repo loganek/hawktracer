@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HawkTracer: /home/loganek/repos/hawktracer-1/lib/include/hawktracer/alloc.h File Reference</title>
+<title>HawkTracer: /home/loganek/Documents/hawktracer/repo/lib/include/hawktracer/alloc.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,10 +104,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a732f04746b15e5605323d555971c0713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#a732f04746b15e5605323d555971c0713">ht_allocator_set</a> (<a class="el" href="alloc_8h.html#a6012bab80ea733190482d3b372bf4e0f">realloc_function</a> func, void *user_data)</td></tr>
 <tr class="memdesc:a732f04746b15e5605323d555971c0713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a global allocator for <a class="el" href="namespace_hawk_tracer.html">HawkTracer</a> library.  <a href="#a732f04746b15e5605323d555971c0713">More...</a><br /></td></tr>
 <tr class="separator:a732f04746b15e5605323d555971c0713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc07b3e61043002339ab5aef3e324db8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#afc07b3e61043002339ab5aef3e324db8">ht_alloc</a> (size_t <a class="el" href="core__events_8h.html#a5852b30f96a96d17cfa7933a8b35e82d">size</a>)</td></tr>
+<tr class="memitem:afc07b3e61043002339ab5aef3e324db8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#afc07b3e61043002339ab5aef3e324db8">ht_alloc</a> (size_t size)</td></tr>
 <tr class="memdesc:afc07b3e61043002339ab5aef3e324db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory using <a class="el" href="namespace_hawk_tracer.html">HawkTracer</a> allocator.  <a href="#afc07b3e61043002339ab5aef3e324db8">More...</a><br /></td></tr>
 <tr class="separator:afc07b3e61043002339ab5aef3e324db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcedc0fe3efc2d8f9821144e8be3f187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#abcedc0fe3efc2d8f9821144e8be3f187">ht_realloc</a> (void *ptr, size_t <a class="el" href="core__events_8h.html#a5852b30f96a96d17cfa7933a8b35e82d">size</a>)</td></tr>
+<tr class="memitem:abcedc0fe3efc2d8f9821144e8be3f187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#abcedc0fe3efc2d8f9821144e8be3f187">ht_realloc</a> (void *ptr, size_t size)</td></tr>
 <tr class="memdesc:abcedc0fe3efc2d8f9821144e8be3f187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the size of the memory block.  <a href="#abcedc0fe3efc2d8f9821144e8be3f187">More...</a><br /></td></tr>
 <tr class="separator:abcedc0fe3efc2d8f9821144e8be3f187"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a585fcf29e23cc074acebd81c97fe2ba4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#a585fcf29e23cc074acebd81c97fe2ba4">ht_free</a> (void *ptr)</td></tr>
@@ -116,7 +116,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6012bab80ea733190482d3b372bf4e0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#a6012bab80ea733190482d3b372bf4e0f">realloc_function</a> )(void *ptr, size_t <a class="el" href="core__events_8h.html#a5852b30f96a96d17cfa7933a8b35e82d">size</a>, void *user_data)</td></tr>
+<tr class="memitem:a6012bab80ea733190482d3b372bf4e0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="alloc_8h.html#a6012bab80ea733190482d3b372bf4e0f">realloc_function</a> )(void *ptr, size_t size, void *user_data)</td></tr>
 <tr class="memdesc:a6012bab80ea733190482d3b372bf4e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for a custom allocator.  <a href="#a6012bab80ea733190482d3b372bf4e0f">More...</a><br /></td></tr>
 <tr class="separator:a6012bab80ea733190482d3b372bf4e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -286,7 +286,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> typedef void*(* realloc_function) (void *ptr, size_t <a class="el" href="core__events_8h.html#a5852b30f96a96d17cfa7933a8b35e82d">size</a>, void *user_data)</td>
+          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> typedef void*(* realloc_function) (void *ptr, size_t size, void *user_data)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -311,7 +311,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li><li class="navelem"><a class="el" href="dir_1664bd36a745a898ec6d2a8359b7e115.html">hawktracer</a></li><li class="navelem"><a class="el" href="alloc_8h.html">alloc.h</a></li>
+    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_871bbb035339bc335f11cfc2834c029a.html">lib</a></li><li class="navelem"><a class="el" href="dir_e7ac0970baa226414bfff9bcce42e74e.html">include</a></li><li class="navelem"><a class="el" href="dir_0a7e90e84a9f5a66b824942862e322e2.html">hawktracer</a></li><li class="navelem"><a class="el" href="alloc_8h.html">alloc.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

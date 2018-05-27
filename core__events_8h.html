@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HawkTracer: /home/loganek/repos/hawktracer-1/lib/include/hawktracer/core_events.h File Reference</title>
+<title>HawkTracer: /home/loganek/Documents/hawktracer/repo/lib/include/hawktracer/core_events.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('core__events_8h.html','');});
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -97,39 +98,50 @@ Macros</h2></td></tr>
 <tr class="memitem:a30fd0292b1416df9811c2ebee24d6714"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a30fd0292b1416df9811c2ebee24d6714">HT_CALLSTACK_BASE_EVENT</a>(event)&#160;&#160;&#160;((<a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a>*)event)</td></tr>
 <tr class="separator:a30fd0292b1416df9811c2ebee24d6714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad4491d6d9bf98be7db79a5a5e2e12b2d"><td class="memItemLeft" align="right" valign="top">typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#ad4491d6d9bf98be7db79a5a5e2e12b2d">HT_CallstackEventLabel</a></td></tr>
+<tr class="separator:ad4491d6d9bf98be7db79a5a5e2e12b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a515e880352857c83dfd8c8c47224c18a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a515e880352857c83dfd8c8c47224c18a">HT_DECLARE_EVENT_KLASS</a> (HT_EventKlassInfoEvent, <a class="el" href="core__events_8h.html#aadd290d398ae94d863ca7ff8f8c02008">HT_Event</a>,(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, <a class="el" href="core__events_8h.html#a4c054b84c5e1178e19bb146cf01c8a68">HT_EventKlassId</a>, <a class="el" href="core__events_8h.html#aefa4efeab66ce9dfc7b1b0e9c1e774fb">info_klass_id</a>),(<a class="el" href="core__events_8h.html#ac5f0b9dc09e14a5a1a4f56a84e63272f">STRING</a>, const char *, event_klass_name),(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, int8_t, field_count)) HT_DECLARE_EVENT_KLASS(HT_EventKlassFieldInfoEvent</td></tr>
-<tr class="separator:a515e880352857c83dfd8c8c47224c18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad5d1274035cff2229f70a43ad2fed33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char data_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#aad5d1274035cff2229f70a43ad2fed33">HT_DECLARE_EVENT_KLASS</a> (<a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a>, <a class="el" href="core__events_8h.html#aadd290d398ae94d863ca7ff8f8c02008">HT_Event</a>,(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, <a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a>, duration),(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, <a class="el" href="base__types_8h.html#a794d6081d06de36ce1b6606917d2aee1">HT_ThreadId</a>, thread_id)) typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a> HT_CallstackEventLabel</td></tr>
-<tr class="separator:aad5d1274035cff2229f70a43ad2fed33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbb3da96548216f6ebabe08424fb3b00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#acbb3da96548216f6ebabe08424fb3b00">HT_DECLARE_EVENT_KLASS</a> (HT_CallstackIntEvent, <a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a>,(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, HT_CallstackEventLabel, label)) HT_DECLARE_EVENT_KLASS(HT_CallstackStringEvent</td></tr>
+<tr class="memitem:a168116c7b1148383fc581d99ca265178"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a168116c7b1148383fc581d99ca265178">HT_DECLARE_EVENT_KLASS</a> (HT_EndiannessInfoEvent, <a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a>,(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a>, endianness)) HT_DECLARE_EVENT_KLASS(HT_EventKlassInfoEvent</td></tr>
+<tr class="separator:a168116c7b1148383fc581d99ca265178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1dc91bd38e694ae7b8a8cfae6723bf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#ac1dc91bd38e694ae7b8a8cfae6723bf8">HT_DECLARE_EVENT_KLASS</a> (HT_EventKlassFieldInfoEvent, <a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a>,(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#a4c054b84c5e1178e19bb146cf01c8a68">HT_EventKlassId</a>, <a class="el" href="core__events_8h.html#aefa4efeab66ce9dfc7b1b0e9c1e774fb">info_klass_id</a>),(<a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a>, const char *, field_type),(<a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a>, const char *, field_name),(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, uint64_t, size),(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a>, data_type)) HT_DECLARE_EVENT_KLASS(<a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a></td></tr>
+<tr class="separator:ac1dc91bd38e694ae7b8a8cfae6723bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbb3da96548216f6ebabe08424fb3b00"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#acbb3da96548216f6ebabe08424fb3b00">HT_DECLARE_EVENT_KLASS</a> (HT_CallstackIntEvent, <a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a>,(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#ad4491d6d9bf98be7db79a5a5e2e12b2d">HT_CallstackEventLabel</a>, label)) HT_DECLARE_EVENT_KLASS(HT_CallstackStringEvent</td></tr>
 <tr class="separator:acbb3da96548216f6ebabe08424fb3b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e8767d0119820d9458bb7d07121c07"><td class="memItemLeft" align="right" valign="top">const char label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#ad1e8767d0119820d9458bb7d07121c07">HT_DECLARE_EVENT_KLASS</a> (HT_StringMappingEvent, <a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a>,(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, uint64_t, identifier),(<a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a>, const char *, label)) HT_DECLARE_EVENT_KLASS(HT_SystemInfoEvent</td></tr>
+<tr class="separator:ad1e8767d0119820d9458bb7d07121c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aadd290d398ae94d863ca7ff8f8c02008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#aadd290d398ae94d863ca7ff8f8c02008">HT_Event</a></td></tr>
-<tr class="separator:aadd290d398ae94d863ca7ff8f8c02008"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cba4f4b27349e02417afcb5af671c04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a></td></tr>
-<tr class="separator:a7cba4f4b27349e02417afcb5af671c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be287cc2d8758bb9f700a63aa45a543"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a></td></tr>
+<tr class="separator:a3be287cc2d8758bb9f700a63aa45a543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bb74a2a8a82c46123504573012a25e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a></td></tr>
+<tr class="separator:a92bb74a2a8a82c46123504573012a25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c054b84c5e1178e19bb146cf01c8a68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a4c054b84c5e1178e19bb146cf01c8a68">HT_EventKlassId</a></td></tr>
 <tr class="separator:a4c054b84c5e1178e19bb146cf01c8a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa4efeab66ce9dfc7b1b0e9c1e774fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#aefa4efeab66ce9dfc7b1b0e9c1e774fb">info_klass_id</a></td></tr>
 <tr class="separator:aefa4efeab66ce9dfc7b1b0e9c1e774fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f0b9dc09e14a5a1a4f56a84e63272f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#ac5f0b9dc09e14a5a1a4f56a84e63272f">STRING</a></td></tr>
-<tr class="separator:ac5f0b9dc09e14a5a1a4f56a84e63272f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a958c5028b2ffe227c33a1cc4028f607e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a958c5028b2ffe227c33a1cc4028f607e">field_type</a></td></tr>
-<tr class="separator:a958c5028b2ffe227c33a1cc4028f607e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8ea7009858a527dfa4ae4ff22f8b8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#aea8ea7009858a527dfa4ae4ff22f8b8b">field_name</a></td></tr>
-<tr class="separator:aea8ea7009858a527dfa4ae4ff22f8b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41a669e3be28c8d4258a1459a04a6335"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a></td></tr>
-<tr class="separator:a41a669e3be28c8d4258a1459a04a6335"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5852b30f96a96d17cfa7933a8b35e82d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a5852b30f96a96d17cfa7933a8b35e82d">size</a></td></tr>
-<tr class="separator:a5852b30f96a96d17cfa7933a8b35e82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea5f84b46f14ea837c13ea4b4c5bd7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a3ea5f84b46f14ea837c13ea4b4c5bd7e">uint8_t</a></td></tr>
-<tr class="separator:a3ea5f84b46f14ea837c13ea4b4c5bd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae158940723622f094459a31491a87336"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a></td></tr>
+<tr class="separator:ae158940723622f094459a31491a87336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c183479286b0ab3677e0d5076ed8c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a29c183479286b0ab3677e0d5076ed8c5">event_klass_name</a></td></tr>
+<tr class="separator:a29c183479286b0ab3677e0d5076ed8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31226327eb5f95076fa25852a3074faa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a></td></tr>
+<tr class="separator:a31226327eb5f95076fa25852a3074faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ac8f63ee22862b1f4a4c05b769575e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a63ac8f63ee22862b1f4a4c05b769575e">HT_DurationNs</a></td></tr>
+<tr class="separator:a63ac8f63ee22862b1f4a4c05b769575e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b4cd201861d311ccfcc30e0e6ba3d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a44b4cd201861d311ccfcc30e0e6ba3d7">duration</a></td></tr>
+<tr class="separator:a44b4cd201861d311ccfcc30e0e6ba3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4bb54b0ea22b8195d7fe75063f4d457"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#ac4bb54b0ea22b8195d7fe75063f4d457">HT_ThreadId</a></td></tr>
+<tr class="separator:ac4bb54b0ea22b8195d7fe75063f4d457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ee1129eadc451964c9a859ad3ba4134"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a></td></tr>
 <tr class="separator:a7ee1129eadc451964c9a859ad3ba4134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22266fffd7247416f3918aef00c312f7"><td class="memItemLeft" align="right" valign="top">const char label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#a22266fffd7247416f3918aef00c312f7">version_major</a></td></tr>
+<tr class="separator:a22266fffd7247416f3918aef00c312f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe185df9ddc65a2eb11df546b29ed7f1"><td class="memItemLeft" align="right" valign="top">const char label&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core__events_8h.html#abe185df9ddc65a2eb11df546b29ed7f1">version_minor</a></td></tr>
+<tr class="separator:abe185df9ddc65a2eb11df546b29ed7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a30fd0292b1416df9811c2ebee24d6714"></a>
@@ -150,9 +162,24 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ad4491d6d9bf98be7db79a5a5e2e12b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4491d6d9bf98be7db79a5a5e2e12b2d">&#9670;&nbsp;</a></span>HT_CallstackEventLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint64_t <a class="el" href="core__events_8h.html#ad4491d6d9bf98be7db79a5a5e2e12b2d">HT_CallstackEventLabel</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a515e880352857c83dfd8c8c47224c18a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a515e880352857c83dfd8c8c47224c18a">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[1/3]</span></h2>
+<a id="a168116c7b1148383fc581d99ca265178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a168116c7b1148383fc581d99ca265178">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,31 +187,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> HT_DECLARE_EVENT_KLASS </td>
           <td>(</td>
-          <td class="paramtype">HT_EventKlassInfoEvent&#160;</td>
+          <td class="paramtype">HT_EndiannessInfoEvent&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="core__events_8h.html#aadd290d398ae94d863ca7ff8f8c02008">HT_Event</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, <a class="el" href="core__events_8h.html#a4c054b84c5e1178e19bb146cf01c8a68">HT_EventKlassId</a>, <a class="el" href="core__events_8h.html#aefa4efeab66ce9dfc7b1b0e9c1e774fb">info_klass_id</a>)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="core__events_8h.html#ac5f0b9dc09e14a5a1a4f56a84e63272f">STRING</a>, const char *, event_klass_name)&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, int8_t, field_count)&#160;</td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a>, endianness)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -197,34 +212,52 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aad5d1274035cff2229f70a43ad2fed33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad5d1274035cff2229f70a43ad2fed33">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[2/3]</span></h2>
+<a id="ac1dc91bd38e694ae7b8a8cfae6723bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1dc91bd38e694ae7b8a8cfae6723bf8">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char data_type HT_DECLARE_EVENT_KLASS </td>
+          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count HT_DECLARE_EVENT_KLASS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="core__events_8h.html#a7ee1129eadc451964c9a859ad3ba4134">HT_CallstackBaseEvent</a>&#160;</td>
+          <td class="paramtype">HT_EventKlassFieldInfoEvent&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="core__events_8h.html#aadd290d398ae94d863ca7ff8f8c02008">HT_Event</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, <a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a>, duration)&#160;</td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#a4c054b84c5e1178e19bb146cf01c8a68">HT_EventKlassId</a>, <a class="el" href="core__events_8h.html#aefa4efeab66ce9dfc7b1b0e9c1e774fb">info_klass_id</a>)&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, <a class="el" href="base__types_8h.html#a794d6081d06de36ce1b6606917d2aee1">HT_ThreadId</a>, thread_id)&#160;</td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a>, const char *, field_type)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a>, const char *, field_name)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, uint64_t, size)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a>, data_type)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -238,7 +271,7 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a id="acbb3da96548216f6ebabe08424fb3b00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbb3da96548216f6ebabe08424fb3b00">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb3da96548216f6ebabe08424fb3b00">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +291,47 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="core__events_8h.html#a7cba4f4b27349e02417afcb5af671c04">INTEGER</a>, HT_CallstackEventLabel, label)&#160;</td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, <a class="el" href="core__events_8h.html#ad4491d6d9bf98be7db79a5a5e2e12b2d">HT_CallstackEventLabel</a>, label)&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1e8767d0119820d9458bb7d07121c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e8767d0119820d9458bb7d07121c07">&#9670;&nbsp;</a></span>HT_DECLARE_EVENT_KLASS() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char label HT_DECLARE_EVENT_KLASS </td>
+          <td>(</td>
+          <td class="paramtype">HT_StringMappingEvent&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="core__events_8h.html#a3be287cc2d8758bb9f700a63aa45a543">HT_Event</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#a92bb74a2a8a82c46123504573012a25e">INTEGER</a>, uint64_t, identifier)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="core__events_8h.html#ae158940723622f094459a31491a87336">STRING</a>, const char *, label)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -272,28 +345,28 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="aea8ea7009858a527dfa4ae4ff22f8b8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea8ea7009858a527dfa4ae4ff22f8b8b">&#9670;&nbsp;</a></span>field_name</h2>
+<a id="a44b4cd201861d311ccfcc30e0e6ba3d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44b4cd201861d311ccfcc30e0e6ba3d7">&#9670;&nbsp;</a></span>duration</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char field_name</td>
+          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count duration</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a958c5028b2ffe227c33a1cc4028f607e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a958c5028b2ffe227c33a1cc4028f607e">&#9670;&nbsp;</a></span>field_type</h2>
+<a id="a29c183479286b0ab3677e0d5076ed8c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c183479286b0ab3677e0d5076ed8c5">&#9670;&nbsp;</a></span>event_klass_name</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_type</td>
+          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char event_klass_name</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -314,14 +387,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aadd290d398ae94d863ca7ff8f8c02008"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadd290d398ae94d863ca7ff8f8c02008">&#9670;&nbsp;</a></span>HT_Event</h2>
+<a id="a63ac8f63ee22862b1f4a4c05b769575e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ac8f63ee22862b1f4a4c05b769575e">&#9670;&nbsp;</a></span>HT_DurationNs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> HT_Event</td>
+          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count <a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3be287cc2d8758bb9f700a63aa45a543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be287cc2d8758bb9f700a63aa45a543">&#9670;&nbsp;</a></span>HT_Event</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char label HT_Event</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -342,6 +429,20 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ac4bb54b0ea22b8195d7fe75063f4d457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4bb54b0ea22b8195d7fe75063f4d457">&#9670;&nbsp;</a></span>HT_ThreadId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char field_count <a class="el" href="base__types_8h.html#a794d6081d06de36ce1b6606917d2aee1">HT_ThreadId</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aefa4efeab66ce9dfc7b1b0e9c1e774fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefa4efeab66ce9dfc7b1b0e9c1e774fb">&#9670;&nbsp;</a></span>info_klass_id</h2>
 
@@ -356,70 +457,70 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7cba4f4b27349e02417afcb5af671c04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cba4f4b27349e02417afcb5af671c04">&#9670;&nbsp;</a></span>INTEGER</h2>
+<a id="a92bb74a2a8a82c46123504573012a25e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92bb74a2a8a82c46123504573012a25e">&#9670;&nbsp;</a></span>INTEGER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char INTEGER</td>
+          <td class="memname">const char label INTEGER</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a5852b30f96a96d17cfa7933a8b35e82d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5852b30f96a96d17cfa7933a8b35e82d">&#9670;&nbsp;</a></span>size</h2>
+<a id="ae158940723622f094459a31491a87336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae158940723622f094459a31491a87336">&#9670;&nbsp;</a></span>STRING</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char size</td>
+          <td class="memname">STRING</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ac5f0b9dc09e14a5a1a4f56a84e63272f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5f0b9dc09e14a5a1a4f56a84e63272f">&#9670;&nbsp;</a></span>STRING</h2>
+<a id="a31226327eb5f95076fa25852a3074faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31226327eb5f95076fa25852a3074faa">&#9670;&nbsp;</a></span>uint8_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char STRING</td>
+          <td class="memname">const char label uint8_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a41a669e3be28c8d4258a1459a04a6335"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41a669e3be28c8d4258a1459a04a6335">&#9670;&nbsp;</a></span>uint64_t</h2>
+<a id="a22266fffd7247416f3918aef00c312f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22266fffd7247416f3918aef00c312f7">&#9670;&nbsp;</a></span>version_major</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char uint64_t</td>
+          <td class="memname">const char label version_major</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3ea5f84b46f14ea837c13ea4b4c5bd7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ea5f84b46f14ea837c13ea4b4c5bd7e">&#9670;&nbsp;</a></span>uint8_t</h2>
+<a id="abe185df9ddc65a2eb11df546b29ed7f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe185df9ddc65a2eb11df546b29ed7f1">&#9670;&nbsp;</a></span>version_minor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="macros_8h.html#a72cdb842abe63cf67271f3ff590b66bc">HT_DECLS_BEGIN</a> const char const char uint8_t</td>
+          <td class="memname">const char label version_minor</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -431,7 +532,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li><li class="navelem"><a class="el" href="dir_1664bd36a745a898ec6d2a8359b7e115.html">hawktracer</a></li><li class="navelem"><a class="el" href="core__events_8h.html">core_events.h</a></li>
+    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_871bbb035339bc335f11cfc2834c029a.html">lib</a></li><li class="navelem"><a class="el" href="dir_e7ac0970baa226414bfff9bcce42e74e.html">include</a></li><li class="navelem"><a class="el" href="dir_0a7e90e84a9f5a66b824942862e322e2.html">hawktracer</a></li><li class="navelem"><a class="el" href="core__events_8h.html">core_events.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

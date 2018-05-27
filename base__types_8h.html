@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HawkTracer: /home/loganek/repos/hawktracer-1/lib/include/hawktracer/base_types.h File Reference</title>
+<title>HawkTracer: /home/loganek/Documents/hawktracer/repo/lib/include/hawktracer/base_types.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('base__types_8h.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="macros_8h_source.html">hawktracer/macros.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mkcreflect_8h_source.html">hawktracer/mkcreflect.h</a>&gt;</code><br />
 <code>#include &lt;inttypes.h&gt;</code><br />
 </div>
 <p><a href="base__types_8h_source.html">Go to the source code of this file.</a></p>
@@ -108,25 +109,25 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aa304d120184a3d79d145f9521a3025d5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#aa304d120184a3d79d145f9521a3025d5">HT_TimestampNs</a></td></tr>
+<tr class="memitem:aa304d120184a3d79d145f9521a3025d5"><td class="memItemLeft" align="right" valign="top">typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#aa304d120184a3d79d145f9521a3025d5">HT_TimestampNs</a></td></tr>
 <tr class="memdesc:aa304d120184a3d79d145f9521a3025d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer used for representing timestamps in nanoseconds.  <a href="#aa304d120184a3d79d145f9521a3025d5">More...</a><br /></td></tr>
 <tr class="separator:aa304d120184a3d79d145f9521a3025d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5de08c62c6535d2a1b0b3af9fa4630ce"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a5de08c62c6535d2a1b0b3af9fa4630ce">HT_EventId</a></td></tr>
+<tr class="memitem:a5de08c62c6535d2a1b0b3af9fa4630ce"><td class="memItemLeft" align="right" valign="top">typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a5de08c62c6535d2a1b0b3af9fa4630ce">HT_EventId</a></td></tr>
 <tr class="memdesc:a5de08c62c6535d2a1b0b3af9fa4630ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer used for event identifiers.  <a href="#a5de08c62c6535d2a1b0b3af9fa4630ce">More...</a><br /></td></tr>
 <tr class="separator:a5de08c62c6535d2a1b0b3af9fa4630ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b3c02d4fb909fa0c37dfe5acb4b95ab"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a></td></tr>
+<tr class="memitem:a8b3c02d4fb909fa0c37dfe5acb4b95ab"><td class="memItemLeft" align="right" valign="top">typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a></td></tr>
 <tr class="memdesc:a8b3c02d4fb909fa0c37dfe5acb4b95ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer used for representing duration in nanoseconds.  <a href="#a8b3c02d4fb909fa0c37dfe5acb4b95ab">More...</a><br /></td></tr>
 <tr class="separator:a8b3c02d4fb909fa0c37dfe5acb4b95ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51299780e101cf59660b634a5bebfac"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#af51299780e101cf59660b634a5bebfac">HT_Boolean</a></td></tr>
 <tr class="memdesc:af51299780e101cf59660b634a5bebfac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A standard boolean type, possible values: <a class="el" href="base__types_8h.html#a0d915bcf71f95c0c8738a3cb85078bf8" title="Defines true value for the HT_Boolean type. ">HT_TRUE</a>, <a class="el" href="base__types_8h.html#af93826a1cb5919418789425c8b9a823e" title="Defines false value for the HT_Boolean type. ">HT_FALSE</a>.  <a href="#af51299780e101cf59660b634a5bebfac">More...</a><br /></td></tr>
 <tr class="separator:af51299780e101cf59660b634a5bebfac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8de71361a2f7a9ee094eef407c97aa17"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a3ea5f84b46f14ea837c13ea4b4c5bd7e">uint8_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a8de71361a2f7a9ee094eef407c97aa17">TEventPtr</a></td></tr>
+<tr class="memitem:a8de71361a2f7a9ee094eef407c97aa17"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a8de71361a2f7a9ee094eef407c97aa17">TEventPtr</a></td></tr>
 <tr class="memdesc:a8de71361a2f7a9ee094eef407c97aa17"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer to a list of HT_Event (or derived) objects.  <a href="#a8de71361a2f7a9ee094eef407c97aa17">More...</a><br /></td></tr>
 <tr class="separator:a8de71361a2f7a9ee094eef407c97aa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a794d6081d06de36ce1b6606917d2aee1"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a794d6081d06de36ce1b6606917d2aee1">HT_ThreadId</a></td></tr>
 <tr class="memdesc:a794d6081d06de36ce1b6606917d2aee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer used for thread identifiers.  <a href="#a794d6081d06de36ce1b6606917d2aee1">More...</a><br /></td></tr>
 <tr class="separator:a794d6081d06de36ce1b6606917d2aee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac228543f15091b45a27e163ac65606ee"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a3ea5f84b46f14ea837c13ea4b4c5bd7e">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#ac228543f15091b45a27e163ac65606ee">HT_Byte</a></td></tr>
+<tr class="memitem:ac228543f15091b45a27e163ac65606ee"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#ac228543f15091b45a27e163ac65606ee">HT_Byte</a></td></tr>
 <tr class="memdesc:ac228543f15091b45a27e163ac65606ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">An unsigned integer guaranteed to be 8 bits on all platforms.  <a href="#ac228543f15091b45a27e163ac65606ee">More...</a><br /></td></tr>
 <tr class="separator:ac228543f15091b45a27e163ac65606ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -145,6 +146,24 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:a33d648be4499dad0fed381138f28b6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines list of possible errors returned by library functions.  <a href="base__types_8h.html#a33d648be4499dad0fed381138f28b6a2">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a33d648be4499dad0fed381138f28b6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483398cb5c63239686d95d34582727fa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#a483398cb5c63239686d95d34582727fa">HT_Endianness</a> { <a class="el" href="base__types_8h.html#a483398cb5c63239686d95d34582727faa17b0f020c99c9e14ae206ccb34f4235f">HT_ENDIANNESS_LITTLE</a> = 0, 
+<a class="el" href="base__types_8h.html#a483398cb5c63239686d95d34582727faa98c2ed9eac423e0b22a247489b65a52e">HT_ENDIANNESS_BIG</a> = 1
+ }<tr class="memdesc:a483398cb5c63239686d95d34582727fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines supported byte ordering.  <a href="base__types_8h.html#a483398cb5c63239686d95d34582727fa">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a483398cb5c63239686d95d34582727fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac636f0343cc4524378a8af8908fe9e4c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4c">HT_MKCREFLECT_Types_Ext</a> { <br />
+&#160;&#160;<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4cae988fe6dba55dc7b9ff1161169ef326f">HT_MKCREFLECT_TYPES_EXT_STRUCT</a> = MKCREFLECT_TYPES_STRUCT, 
+<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4cace6186f3b80a7ac59bdcf2578b686a73">HT_MKCREFLECT_TYPES_EXT_STRING</a> = MKCREFLECT_TYPES_STRING, 
+<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4caaccab4c1decfe26c093fc0132a5f171e">HT_MKCREFLECT_TYPES_EXT_INTEGER</a> = MKCREFLECT_TYPES_INTEGER, 
+<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4caa43d0952119c2d2f7a17023510615981">HT_MKCREFLECT_TYPES_EXT_FLOAT</a> = MKCREFLECT_TYPES_FLOAT, 
+<br />
+&#160;&#160;<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4cab834cf8e48031760dca3d6baa54d5b05">HT_MKCREFLECT_TYPES_EXT_DOUBLE</a> = MKCREFLECT_TYPES_DOUBLE, 
+<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4ca584832db7fbe68eb79802400a3e7283d">HT_MKCREFLECT_TYPES_EXT_POINTER</a> = MKCREFLECT_TYPES_POINTER, 
+<a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4caa012dc3691804ee05bea6e49b02019b3">HT_MKCREFLECT_TYPES_EXT_UNSIGNED_INTEGER</a> = 99
+<br />
+ }<tr class="memdesc:ac636f0343cc4524378a8af8908fe9e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines list of data types of event fields.  <a href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4c">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:ac636f0343cc4524378a8af8908fe9e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -225,7 +244,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="core__events_8h.html#a3ea5f84b46f14ea837c13ea4b4c5bd7e">uint8_t</a> <a class="el" href="base__types_8h.html#ac228543f15091b45a27e163ac65606ee">HT_Byte</a></td>
+          <td class="memname">typedef <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a> <a class="el" href="base__types_8h.html#ac228543f15091b45a27e163ac65606ee">HT_Byte</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -241,7 +260,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a> <a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a></td>
+          <td class="memname">typedef uint64_t <a class="el" href="base__types_8h.html#a8b3c02d4fb909fa0c37dfe5acb4b95ab">HT_DurationNs</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -257,7 +276,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a> <a class="el" href="base__types_8h.html#a5de08c62c6535d2a1b0b3af9fa4630ce">HT_EventId</a></td>
+          <td class="memname">typedef uint64_t <a class="el" href="base__types_8h.html#a5de08c62c6535d2a1b0b3af9fa4630ce">HT_EventId</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -289,7 +308,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="core__events_8h.html#a41a669e3be28c8d4258a1459a04a6335">uint64_t</a> <a class="el" href="base__types_8h.html#aa304d120184a3d79d145f9521a3025d5">HT_TimestampNs</a></td>
+          <td class="memname">typedef uint64_t <a class="el" href="base__types_8h.html#aa304d120184a3d79d145f9521a3025d5">HT_TimestampNs</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -305,7 +324,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="core__events_8h.html#a3ea5f84b46f14ea837c13ea4b4c5bd7e">uint8_t</a>* <a class="el" href="base__types_8h.html#a8de71361a2f7a9ee094eef407c97aa17">TEventPtr</a></td>
+          <td class="memname">typedef <a class="el" href="core__events_8h.html#a31226327eb5f95076fa25852a3074faa">uint8_t</a>* <a class="el" href="base__types_8h.html#a8de71361a2f7a9ee094eef407c97aa17">TEventPtr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -315,6 +334,28 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a483398cb5c63239686d95d34582727fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a483398cb5c63239686d95d34582727fa">&#9670;&nbsp;</a></span>HT_Endianness</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="base__types_8h.html#a483398cb5c63239686d95d34582727fa">HT_Endianness</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Defines supported byte ordering. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a483398cb5c63239686d95d34582727faa17b0f020c99c9e14ae206ccb34f4235f"></a>HT_ENDIANNESS_LITTLE&#160;</td><td class="fielddoc"><p>Little-endian order. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a483398cb5c63239686d95d34582727faa98c2ed9eac423e0b22a247489b65a52e"></a>HT_ENDIANNESS_BIG&#160;</td><td class="fielddoc"><p>Big-endian order. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="a33d648be4499dad0fed381138f28b6a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33d648be4499dad0fed381138f28b6a2">&#9670;&nbsp;</a></span>HT_ErrorCode</h2>
 
@@ -351,6 +392,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ac636f0343cc4524378a8af8908fe9e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac636f0343cc4524378a8af8908fe9e4c">&#9670;&nbsp;</a></span>HT_MKCREFLECT_Types_Ext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="base__types_8h.html#ac636f0343cc4524378a8af8908fe9e4c">HT_MKCREFLECT_Types_Ext</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Defines list of data types of event fields. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4cae988fe6dba55dc7b9ff1161169ef326f"></a>HT_MKCREFLECT_TYPES_EXT_STRUCT&#160;</td><td class="fielddoc"><p>Data type struct. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4cace6186f3b80a7ac59bdcf2578b686a73"></a>HT_MKCREFLECT_TYPES_EXT_STRING&#160;</td><td class="fielddoc"><p>Data type string. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4caaccab4c1decfe26c093fc0132a5f171e"></a>HT_MKCREFLECT_TYPES_EXT_INTEGER&#160;</td><td class="fielddoc"><p>Data type integer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4caa43d0952119c2d2f7a17023510615981"></a>HT_MKCREFLECT_TYPES_EXT_FLOAT&#160;</td><td class="fielddoc"><p>Data type float. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4cab834cf8e48031760dca3d6baa54d5b05"></a>HT_MKCREFLECT_TYPES_EXT_DOUBLE&#160;</td><td class="fielddoc"><p>Data type double. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4ca584832db7fbe68eb79802400a3e7283d"></a>HT_MKCREFLECT_TYPES_EXT_POINTER&#160;</td><td class="fielddoc"><p>Data type pointer. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac636f0343cc4524378a8af8908fe9e4caa012dc3691804ee05bea6e49b02019b3"></a>HT_MKCREFLECT_TYPES_EXT_UNSIGNED_INTEGER&#160;</td><td class="fielddoc"><p>Data type unsigned integer. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="acece2ade55178ff476e9a20bb8d6baed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acece2ade55178ff476e9a20bb8d6baed">&#9670;&nbsp;</a></span>HT_EventKlassId</h2>
@@ -373,7 +446,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li><li class="navelem"><a class="el" href="dir_1664bd36a745a898ec6d2a8359b7e115.html">hawktracer</a></li><li class="navelem"><a class="el" href="base__types_8h.html">base_types.h</a></li>
+    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_871bbb035339bc335f11cfc2834c029a.html">lib</a></li><li class="navelem"><a class="el" href="dir_e7ac0970baa226414bfff9bcce42e74e.html">include</a></li><li class="navelem"><a class="el" href="dir_0a7e90e84a9f5a66b824942862e322e2.html">hawktracer</a></li><li class="navelem"><a class="el" href="base__types_8h.html">base_types.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

@@ -6,5 +6,6 @@ var timeline__listener_8h =
     [ "ht_timeline_listener_container_create", "timeline__listener_8h.html#afd73f484482e58eb1cd0022d777ac045", null ],
     [ "ht_timeline_listener_container_register_listener", "timeline__listener_8h.html#a45f297162c17166ee0986ec1e82927b6", null ],
     [ "ht_timeline_listener_container_unref", "timeline__listener_8h.html#a7e7ea973522bcc7ed0d4c5ca4939aee5", null ],
-    [ "ht_timeline_listener_container_unregister_all_listeners", "timeline__listener_8h.html#acfb711514a1bd2ebff3f9bab6469e38f", null ]
+    [ "ht_timeline_listener_container_unregister_all_listeners", "timeline__listener_8h.html#acfb711514a1bd2ebff3f9bab6469e38f", null ],
+    [ "ht_timeline_listener_push_metadata", "timeline__listener_8h.html#a2cff3c1f5b80386f2b9518442a542dea", null ]
 ];

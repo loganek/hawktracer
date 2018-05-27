@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7escopedtracepoint',['~ScopedTracepoint',['../class_hawk_tracer_1_1_scoped_tracepoint.html#a80e447122da5503829be80b2f23d1b7c',1,'HawkTracer::ScopedTracepoint']]],
-  ['_7etcpserver',['~TCPServer',['../class_hawk_tracer_1_1_t_c_p_server.html#a5bde0be729e37554cee706a3265a15db',1,'HawkTracer::TCPServer']]]
+  ['write',['write',['../class_hawk_tracer_1_1_t_c_p_server.html#a98944a25ba5e8fcb5988af7b47790504',1,'HawkTracer::TCPServer']]],
+  ['write_5fto_5fsocket',['write_to_socket',['../class_hawk_tracer_1_1_t_c_p_server.html#a7d0677c84f5b842a7ec1737b94266dfb',1,'HawkTracer::TCPServer']]]
 ];

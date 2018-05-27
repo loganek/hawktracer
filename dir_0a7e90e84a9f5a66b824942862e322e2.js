@@ -1,10 +1,11 @@
-var dir_1664bd36a745a898ec6d2a8359b7e115 =
+var dir_0a7e90e84a9f5a66b824942862e322e2 =
 [
-    [ "listeners", "dir_3c16dda534b74afc10ce5b4e114bcc7b.html", "dir_3c16dda534b74afc10ce5b4e114bcc7b" ],
+    [ "listeners", "dir_3e3db989835d56d3202ae1b19d911113.html", "dir_3e3db989835d56d3202ae1b19d911113" ],
     [ "alloc.h", "alloc_8h.html", "alloc_8h" ],
     [ "base_types.h", "base__types_8h.html", "base__types_8h" ],
     [ "core_events.h", "core__events_8h.html", "core__events_8h" ],
     [ "cpu_usage.h", "cpu__usage_8h.html", "cpu__usage_8h" ],
+    [ "duration_conversion.h", "duration__conversion_8h.html", "duration__conversion_8h" ],
     [ "event_id_provider.h", "event__id__provider_8h.html", "event__id__provider_8h" ],
     [ "event_macros.h", "event__macros_8h.html", "event__macros_8h" ],
     [ "event_macros_impl.h", "event__macros__impl_8h.html", "event__macros__impl_8h" ],
@@ -24,6 +25,7 @@ var dir_1664bd36a745a898ec6d2a8359b7e115 =
       [ "ScopedTracepoint", "class_hawk_tracer_1_1_scoped_tracepoint.html", "class_hawk_tracer_1_1_scoped_tracepoint" ]
     ] ],
     [ "string_scoped_tracepoint.h", "string__scoped__tracepoint_8h.html", "string__scoped__tracepoint_8h" ],
+    [ "system_info.h", "system__info_8h.html", "system__info_8h" ],
     [ "task_scheduler.h", "task__scheduler_8h.html", "task__scheduler_8h" ],
     [ "thread.h", "thread_8h.html", "thread_8h" ],
     [ "timeline.h", "timeline_8h.html", "timeline_8h" ],

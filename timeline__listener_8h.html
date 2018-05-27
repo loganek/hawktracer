@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>HawkTracer: /home/loganek/repos/hawktracer-1/lib/include/hawktracer/timeline_listener.h File Reference</title>
+<title>HawkTracer: /home/loganek/Documents/hawktracer/repo/lib/include/hawktracer/timeline_listener.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,6 +101,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2cff3c1f5b80386f2b9518442a542dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timeline__listener_8h.html#a2cff3c1f5b80386f2b9518442a542dea">ht_timeline_listener_push_metadata</a> (<a class="el" href="timeline__listener_8h.html#a792da38092f02673cd629d1acfffeca8">HT_TimelineListenerCallback</a> callback, void *listener, <a class="el" href="base__types_8h.html#af51299780e101cf59660b634a5bebfac">HT_Boolean</a> serialize)</td></tr>
+<tr class="memdesc:a2cff3c1f5b80386f2b9518442a542dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes all metadata events (registry klasses, system information) to a listener.  <a href="#a2cff3c1f5b80386f2b9518442a542dea">More...</a><br /></td></tr>
+<tr class="separator:a2cff3c1f5b80386f2b9518442a542dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd73f484482e58eb1cd0022d777ac045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> <a class="el" href="timeline__listener_8h.html#ac5d332777f1e52f74a48c4f40e8add0c">HT_TimelineListenerContainer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timeline__listener_8h.html#afd73f484482e58eb1cd0022d777ac045">ht_timeline_listener_container_create</a> (void)</td></tr>
 <tr class="separator:afd73f484482e58eb1cd0022d777ac045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e7ea973522bcc7ed0d4c5ca4939aee5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timeline__listener_8h.html#a7e7ea973522bcc7ed0d4c5ca4939aee5">ht_timeline_listener_container_unref</a> (<a class="el" href="timeline__listener_8h.html#ac5d332777f1e52f74a48c4f40e8add0c">HT_TimelineListenerContainer</a> *container)</td></tr>
@@ -280,12 +283,57 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2cff3c1f5b80386f2b9518442a542dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cff3c1f5b80386f2b9518442a542dea">&#9670;&nbsp;</a></span>ht_timeline_listener_push_metadata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="macros_8h.html#a466255af46783a4dd6a2198ba9e4889c">HT_API</a> size_t ht_timeline_listener_push_metadata </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="timeline__listener_8h.html#a792da38092f02673cd629d1acfffeca8">HT_TimelineListenerCallback</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>listener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="base__types_8h.html#af51299780e101cf59660b634a5bebfac">HT_Boolean</a>&#160;</td>
+          <td class="paramname"><em>serialize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pushes all metadata events (registry klasses, system information) to a listener. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>a listener callback. </td></tr>
+    <tr><td class="paramname">listener</td><td>a pointer to the listener </td></tr>
+    <tr><td class="paramname">serialize</td><td>indicates whether events should be serialized before pushing to listener or not.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of bytes which have been pushed to a listener. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li><li class="navelem"><a class="el" href="dir_1664bd36a745a898ec6d2a8359b7e115.html">hawktracer</a></li><li class="navelem"><a class="el" href="timeline__listener_8h.html">timeline_listener.h</a></li>
+    <li class="navelem"><a class="el" href="dir_752f9258976072ab3e06b31dacb87d2d.html">repo</a></li><li class="navelem"><a class="el" href="dir_871bbb035339bc335f11cfc2834c029a.html">lib</a></li><li class="navelem"><a class="el" href="dir_e7ac0970baa226414bfff9bcce42e74e.html">include</a></li><li class="navelem"><a class="el" href="dir_0a7e90e84a9f5a66b824942862e322e2.html">hawktracer</a></li><li class="navelem"><a class="el" href="timeline__listener_8h.html">timeline_listener.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
