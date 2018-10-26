@@ -21,11 +21,7 @@ HT_DECLS_BEGIN
 
 typedef struct _HT_Timeline HT_Timeline;
 
-HT_API HT_Timeline* ht_timeline_create(size_t buffer_capacity,
-                                       HT_Boolean thread_safe,
-                                       HT_Boolean serialize_events,
-                                       const char* listeners,
-                                       HT_ErrorCode* out_err);
+HT_API HT_Timeline* ht_timeline_create(HT_ErrorCode* out_err);
 
 HT_API void ht_timeline_destroy(HT_Timeline* timeline);
 
@@ -39,8 +35,6 @@ HT_API void ht_timeline_unregister_all_listeners(HT_Timeline* timeline);
 HT_API void ht_timeline_init_event(HT_Timeline* timeline, HT_Event* event);
 
 HT_API void ht_timeline_push_event(HT_Timeline* timeline, HT_Event* event);
-
-HT_API void ht_timeline_flush(HT_Timeline* timeline);
 
 HT_API void ht_timeline_set_feature(HT_Timeline* timeline, size_t feature_id, void* feature);
 

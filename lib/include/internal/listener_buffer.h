@@ -1,7 +1,7 @@
 #ifndef HAWKTRACER_INTERNAL_LISTENER_BUFFER_H
 #define HAWKTRACER_INTERNAL_LISTENER_BUFFER_H
 
-#include <hawktracer/base_types.h>
+#include <hawktracer/events.h>
 
 #include <stddef.h>
 
@@ -20,15 +20,8 @@ HT_API HT_ErrorCode ht_listener_buffer_init(HT_ListenerBuffer* buffer, size_t ma
 
 HT_API void ht_listener_buffer_deinit(HT_ListenerBuffer* buffer);
 
-HT_API void ht_listener_buffer_process_serialized_events(HT_ListenerBuffer* buffer,
-                                                         TEventPtr events,
-                                                         size_t size,
-                                                         HT_ListenerFlushCallback flush_callback,
-                                                         void* listener);
-
 HT_API void ht_listener_buffer_process_unserialized_events(HT_ListenerBuffer* buffer,
-                                                           TEventPtr events,
-                                                           size_t size,
+                                                           HT_Event *event,
                                                            HT_ListenerFlushCallback flush_callback,
                                                            void* listener);
 

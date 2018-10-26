@@ -18,8 +18,6 @@ typedef uint64_t HT_EventId;
 typedef uint64_t HT_DurationNs;
 /** A standard boolean type, possible values: #HT_TRUE, #HT_FALSE */
 typedef int HT_Boolean;
-/** A pointer to a list of HT_Event (or derived) objects. */
-typedef uint8_t* TEventPtr;
 /** An unsigned integer used for thread identifiers. */
 typedef uint32_t HT_ThreadId;
 /** An unsigned integer guaranteed to be 8 bits on all platforms. */

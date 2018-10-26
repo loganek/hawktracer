@@ -12,25 +12,9 @@
 struct _HT_Timeline
 {
     void* features[HT_TIMELINE_MAX_FEATURES];
-    size_t buffer_capacity;
-    size_t buffer_usage;
-    HT_Byte* buffer;
     HT_EventIdProvider* id_provider;
     HT_TimelineListenerContainer* listeners;
-    struct _HT_Mutex* locking_policy;
-    HT_Boolean serialize_events;
 };
-
-static inline void
-_ht_timeline_notify_listeners(HT_Timeline* timeline, TEventPtr events, size_t size)
-{
-    size_t i;
-    for (i = 0; i < timeline->listeners->user_datas.size; i++)
-    {
-        (*(HT_TimelineListenerCallback*)&timeline->listeners->callbacks.data[i])
-                (events, size, timeline->serialize_events, timeline->listeners->user_datas.data[i]);
-    }
-}
 
 void
 ht_timeline_init_event(HT_Timeline* timeline, HT_Event* event)
@@ -42,77 +26,11 @@ ht_timeline_init_event(HT_Timeline* timeline, HT_Event* event)
 void
 ht_timeline_push_event(HT_Timeline* timeline, HT_Event* event)
 {
-    HT_EventKlass* klass = HT_EVENT_GET_KLASS(event);
-
-    assert(timeline);
-    assert(event);
-
-    if (timeline->locking_policy != NULL)
+    size_t i;
+    for (i = 0; i < timeline->listeners->user_datas.size; i++)
     {
-        ht_mutex_lock(timeline->locking_policy);
-    }
-
-    if (timeline->serialize_events)
-    {
-        size_t size = klass->get_size(event);
-        if (timeline->buffer_capacity < timeline->buffer_usage + size)
-        {
-            ht_timeline_flush(timeline);
-        }
-
-        if (timeline->buffer_capacity < size)
-        {
-            HT_Byte local_buffer[128];
-            if (size > sizeof(local_buffer)/sizeof(local_buffer[0]))
-            {
-                HT_Byte* buff = ht_alloc(size);
-                event->klass->serialize(event, buff);
-                _ht_timeline_notify_listeners(timeline, buff, size);
-                ht_free(buff);
-            }
-            else
-            {
-                event->klass->serialize(event, local_buffer);
-                _ht_timeline_notify_listeners(timeline, local_buffer, size);
-            }
-        }
-        else
-        {
-            event->klass->serialize(event, timeline->buffer + timeline->buffer_usage);
-            timeline->buffer_usage += size;
-        }
-    }
-    else
-    {
-        if (timeline->buffer_capacity < timeline->buffer_usage + klass->type_info->size)
-        {
-            ht_timeline_flush(timeline);
-        }
-
-        if (timeline->buffer_capacity < klass->type_info->size) 
-        {
-            _ht_timeline_notify_listeners(timeline, (TEventPtr)event, klass->type_info->size);
-        }
-        else
-        {
-            memcpy(timeline->buffer + timeline->buffer_usage, event, klass->type_info->size);
-            timeline->buffer_usage += klass->type_info->size;
-        }
-    }
-
-    if (timeline->locking_policy != NULL)
-    {
-        ht_mutex_unlock(timeline->locking_policy);
-    }
-}
-
-void
-ht_timeline_flush(HT_Timeline* timeline)
-{
-    if (timeline->buffer_usage)
-    {
-        _ht_timeline_notify_listeners(timeline, timeline->buffer, timeline->buffer_usage);
-        timeline->buffer_usage = 0;
+        (*(HT_TimelineListenerCallback*)&timeline->listeners->callbacks.data[i])
+                (event, timeline->listeners->user_datas.data[i]);
     }
 }
 
@@ -147,64 +65,24 @@ ht_timeline_unregister_all_listeners(HT_Timeline* timeline)
 }
 
 HT_Timeline*
-ht_timeline_create(size_t buffer_capacity,
-                   HT_Boolean thread_safe,
-                   HT_Boolean serialize_events,
-                   const char* listeners,
-                   HT_ErrorCode* out_err)
+ht_timeline_create(HT_ErrorCode* out_err)
 {
     HT_ErrorCode error_code = HT_ERR_OK;
     HT_Timeline* timeline = HT_CREATE_TYPE(HT_Timeline);
 
     if (timeline == NULL)
     {
+        error_code = HT_ERR_OUT_OF_MEMORY;
         goto done;
     }
 
-    timeline->buffer = (HT_Byte*)ht_alloc(buffer_capacity);
+    /* TODO find_or_create_listener: simplify? */
+    /* TODO: error handling */
+    timeline->listeners = ht_find_or_create_listener(NULL);
 
-    if (timeline->buffer == NULL)
-    {
-        error_code = HT_ERR_OUT_OF_MEMORY;
-        goto error_allocate_buffer;
-    }
-
-    timeline->listeners = ht_find_or_create_listener(listeners);
-    if (timeline->listeners == NULL)
-    {
-        error_code = HT_ERR_CANT_CREATE_LISTENER_CONTAINER;
-        goto error_create_listener;
-    }
-
-    if (thread_safe)
-    {
-        timeline->locking_policy = ht_mutex_create();
-        if (timeline->locking_policy == NULL)
-        {
-            error_code = HT_ERR_OUT_OF_MEMORY;
-            goto error_locking_policy;
-        }
-    }
-    else
-    {
-        timeline->locking_policy = NULL;
-    }
-
-    timeline->buffer_usage = 0;
-    timeline->buffer_capacity = buffer_capacity;
     timeline->id_provider = ht_event_id_provider_get_default();
-    timeline->serialize_events = serialize_events;
     memset(timeline->features, 0, sizeof(timeline->features));
 
-    goto done;
-
-error_locking_policy:
-    ht_timeline_listener_container_unref(timeline->listeners);
-error_create_listener:
-    ht_free(timeline->buffer);
-error_allocate_buffer:
-    ht_free(timeline);
-    timeline = NULL;
 done:
     if (out_err != NULL)
     {
@@ -221,9 +99,6 @@ ht_timeline_destroy(HT_Timeline* timeline)
 
     assert(timeline);
 
-    ht_timeline_flush(timeline);
-    ht_free(timeline->buffer);
-
     ht_timeline_listener_container_unref(timeline->listeners);
 
     for (i = 0; i < sizeof(timeline->features) / sizeof(timeline->features[0]); i++)
@@ -233,11 +108,6 @@ ht_timeline_destroy(HT_Timeline* timeline)
             ht_feature_disable(timeline, i);
             timeline->features[i] = NULL;
         }
-    }
-
-    if (timeline->locking_policy)
-    {
-        ht_mutex_destroy(timeline->locking_policy);
     }
 
     ht_free(timeline);

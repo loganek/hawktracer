@@ -10,14 +10,10 @@ class TestFileDumpListener : public ::testing::Test
 protected:
     static void SetUpTestCase()
     {
-        _registry_klass_bytes = ht_timeline_listener_push_metadata(
-                    [](TEventPtr, size_t, HT_Boolean, void*){}, nullptr, HT_TRUE);
+        ht_timeline_listener_push_metadata(
+                    [](HT_Event*, void*){}, nullptr);
     }
-
-    static size_t _registry_klass_bytes;
 };
-
-size_t TestFileDumpListener::_registry_klass_bytes;
 
 TEST_F(TestFileDumpListener, InitShouldFailIfFileCanNotBeOpened)
 {

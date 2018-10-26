@@ -221,66 +221,39 @@ _ht_registry_init_event_klass_field_info_event(HT_EventKlass* klass, size_t fiel
     event->size = info->size;
 }
 
-static size_t
-_ht_registry_push_class_to_listener(HT_EventKlass* klass, HT_Byte* data, size_t* data_pos, HT_TimelineListenerCallback callback, void* listener, HT_Boolean serialize)
+static void
+_ht_registry_push_class_to_listener(HT_EventKlass* klass, HT_TimelineListenerCallback callback, void* listener)
 {
     size_t j;
-    size_t total_size = 0;
     HT_DECL_EVENT(HT_EventKlassInfoEvent, event);
     _ht_registry_init_event_klass_info_event(klass, &event);
 
-    if (ht_HT_EventKlassInfoEvent_get_size(HT_EVENT(&event)) > REGISTRY_LISETNER_BUFF_SIZE - *data_pos)
-    {
-        callback(data, *data_pos, serialize, listener);
-        total_size += *data_pos;
-        *data_pos = 0;
-    }
+    callback(HT_EVENT(&event), listener);
 
-    *data_pos += ht_event_utils_serialize_event_to_buffer(HT_EVENT(&event), data + *data_pos, serialize);
+    // TODO do we need this function ? *data_pos += ht_event_utils_serialize_event_to_buffer(HT_EVENT(&event), data + *data_pos, serialize);
 
     for (j = 0; j < klass->type_info->fields_count; j++)
     {
         HT_DECL_EVENT(HT_EventKlassFieldInfoEvent, field_event);
         _ht_registry_init_event_klass_field_info_event(klass, j, &field_event);
 
-        if (ht_HT_EventKlassFieldInfoEvent_get_size(HT_EVENT(&field_event)) > REGISTRY_LISETNER_BUFF_SIZE - *data_pos)
-        {
-            callback(data, *data_pos, serialize, listener);
-            total_size += *data_pos;
-            *data_pos = 0;
-        }
-
-        *data_pos += ht_event_utils_serialize_event_to_buffer(HT_EVENT(&field_event), data + *data_pos, serialize);
+        callback(HT_EVENT(&field_event), listener);
     }
-
-    return total_size;
 }
 
-size_t
-ht_registry_push_registry_klasses_to_listener(HT_TimelineListenerCallback callback, void* listener, HT_Boolean serialize)
+void
+ht_registry_push_registry_klasses_to_listener(HT_TimelineListenerCallback callback, void* listener)
 {
     size_t i;
-    size_t total_size = 0;
-
-    HT_Byte data[REGISTRY_LISETNER_BUFF_SIZE];
-    size_t data_pos = 0;
 
     ht_mutex_lock(event_klass_registry_register_mutex);
 
     for (i = 0; i < event_klass_register.size; i++)
     {
-        total_size += _ht_registry_push_class_to_listener((HT_EventKlass*)event_klass_register.data[i], data, &data_pos, callback, listener, serialize);
+        _ht_registry_push_class_to_listener((HT_EventKlass*)event_klass_register.data[i], callback, listener);
     }
 
     ht_mutex_unlock(event_klass_registry_register_mutex);
-
-    if (data_pos > 0)
-    {
-        callback(data, data_pos, serialize, listener);
-        total_size += data_pos;
-    }
-
-    return total_size;
 }
 
 

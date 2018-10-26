@@ -21,7 +21,7 @@ struct _HT_TCPListener
 public:
     ~_HT_TCPListener();
     HT_ErrorCode init(int port, size_t buffer_size);
-    void push_events(TEventPtr events, size_t size, HT_Boolean serialized);
+    void push_event(HT_Event* event);
 
 private:
     void _flush()
@@ -36,12 +36,13 @@ private:
         HT_TCPListener* listener = reinterpret_cast<HT_TCPListener*>(user_data);
         listener->_last_client_sock_fd = sock_fd;
         ht_timeline_listener_push_metadata(
-                    [](TEventPtr e, size_t c, HT_Boolean serialized, void* user_data) {
-            assert(serialized);
+                    [](HT_Event* e, void* user_data) {
+            HT_Byte buff[256];
             HT_TCPListener* listener = reinterpret_cast<HT_TCPListener*>(user_data);
             std::lock_guard<std::mutex> l(listener->_push_action_mutex);
+            size_t c = e->klass->serialize(e, buff);
             listener->_tcp_server.write_to_socket(listener->_last_client_sock_fd, (char*)e, c);
-        }, user_data, HT_TRUE);
+        }, user_data);
     }
 
     static void _f_flush(void* listener)
@@ -83,7 +84,7 @@ _HT_TCPListener::~_HT_TCPListener()
     ht_listener_buffer_deinit(&_buffer);
 }
 
-void _HT_TCPListener::push_events(TEventPtr events, size_t size, HT_Boolean serialized)
+void _HT_TCPListener::push_event(HT_Event* event)
 {
     if (!_tcp_server.is_running())
     {
@@ -92,14 +93,7 @@ void _HT_TCPListener::push_events(TEventPtr events, size_t size, HT_Boolean seri
 
     std::lock_guard<std::mutex> l(_push_action_mutex);
 
-    if (serialized)
-    {
-        ht_listener_buffer_process_serialized_events(&_buffer, events, size, _f_flush, this);
-    }
-    else
-    {
-        ht_listener_buffer_process_unserialized_events(&_buffer, events, size, _f_flush, this);
-    }
+    ht_listener_buffer_process_unserialized_events(&_buffer, event, _f_flush, this);
 
     if (_was_flushed)
     {
@@ -136,7 +130,7 @@ void ht_tcp_listener_destroy(HT_TCPListener* listener)
     ht_free(listener);
 }
 
-void ht_tcp_listener_callback(TEventPtr events, size_t size, HT_Boolean serialized, void* user_data)
+void ht_tcp_listener_callback(HT_Event* event, void* user_data)
 {
-    ((HT_TCPListener*)user_data)->push_events(events, size, serialized);
+    ((HT_TCPListener*)user_data)->push_event(event);
 }

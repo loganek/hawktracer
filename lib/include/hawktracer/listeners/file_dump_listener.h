@@ -1,7 +1,7 @@
 #ifndef HAWKTRACER_LISTENERS_FILE_DUMP_LISTENER_H
 #define HAWKTRACER_LISTENERS_FILE_DUMP_LISTENER_H
 
-#include <hawktracer/base_types.h>
+#include <hawktracer/events.h>
 #include <stdio.h>
 
 HT_DECLS_BEGIN
@@ -12,7 +12,7 @@ HT_API HT_FileDumpListener* ht_file_dump_listener_create(const char* filename, s
 
 HT_API void ht_file_dump_listener_destroy(HT_FileDumpListener* listener);
 
-HT_API void ht_file_dump_listener_callback(TEventPtr events, size_t size, HT_Boolean serialized, void* user_data);
+HT_API void ht_file_dump_listener_callback(HT_Event* event, void* user_data);
 
 HT_DECLS_END
 

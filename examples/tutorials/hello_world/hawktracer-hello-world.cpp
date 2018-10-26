@@ -46,8 +46,6 @@ int main(int argc, char** argv)
     /* Run the actual code */
     hello_world();
 
-    /* Flush all the buffered events in a timeline */
-    ht_timeline_flush(ht_global_timeline_get());
     /* Unregister all the listeners from the global timeline, so we can safely destroy them */
     ht_timeline_unregister_all_listeners(ht_global_timeline_get());
     /* Destroy listeners */

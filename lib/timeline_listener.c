@@ -131,14 +131,10 @@ ht_find_or_create_listener(const char* name)
     return container;
 }
 
-size_t
-ht_timeline_listener_push_metadata(HT_TimelineListenerCallback callback, void* listener, HT_Boolean serialize)
+void
+ht_timeline_listener_push_metadata(HT_TimelineListenerCallback callback, void* listener)
 {
-    size_t size = 0;
-
-    size += ht_system_info_push_endianness_info_to_listener(callback, listener, serialize);
-    size += ht_registry_push_registry_klasses_to_listener(callback, listener, serialize);
-    size += ht_system_info_push_system_info_to_listener(callback, listener, serialize);
-
-    return size;
+    ht_system_info_push_endianness_info_to_listener(callback, listener);
+    ht_registry_push_registry_klasses_to_listener(callback, listener);
+    ht_system_info_push_system_info_to_listener(callback, listener);
 }

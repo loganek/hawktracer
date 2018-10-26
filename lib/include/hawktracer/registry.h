@@ -34,11 +34,8 @@ HT_API HT_EventKlassId ht_registry_register_event_klass(HT_EventKlass* event_kla
  *
  * @param callback the listener callback.
  * @param listener a pointer to the listener.
- * @param serialize indicates whether events should be serialized before pushing to listener or not.
- *
- * @return number of bytes which have been pushed to a listener.
  */
-HT_API size_t ht_registry_push_registry_klasses_to_listener(HT_TimelineListenerCallback callback, void* listener, HT_Boolean serialize);
+HT_API void ht_registry_push_registry_klasses_to_listener(HT_TimelineListenerCallback callback, void* listener);
 
 /* TODO: this API should probably be removed */
 HT_API HT_EventKlass** ht_registry_get_event_klasses(size_t* out_klass_count);

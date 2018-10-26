@@ -5,7 +5,7 @@ struct GlobalTimeline
     GlobalTimeline()
     {
         /* TODO: handle ht_timeline_create() error? */
-        c_timeline = ht_timeline_create(1024, HT_FALSE, HT_TRUE, "HT_GlobalTimeline", NULL);
+        c_timeline = ht_timeline_create(NULL);
         ht_feature_callstack_enable(c_timeline);
         ht_feature_cached_string_enable(c_timeline);
     }

@@ -33,7 +33,7 @@ set(HAWKTRACER_CORE_HEADERS
 set(HAWKTRACER_LIB_HEADERS ${HAWKTRACER_LISTENER_HEADERS} ${HAWKTRACER_CORE_HEADERS})
 
 set(HAWKTRACER_LISTENERS_SOURCES
-    listeners/file_dump_listener.c
+    listeners/file_dump_listener.cpp
     listeners/tcp_listener.cpp)
 
 set(HAWKTRACER_CORE_SOURCES

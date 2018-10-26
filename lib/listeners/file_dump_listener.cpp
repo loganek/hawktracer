@@ -54,7 +54,7 @@ ht_file_dump_listener_create(const char* filename, size_t buffer_size, HT_ErrorC
     }
     else
     {
-        ht_timeline_listener_push_metadata(ht_file_dump_listener_callback, listener, HT_TRUE);
+        ht_timeline_listener_push_metadata(ht_file_dump_listener_callback, listener);
         goto done;
     }
 
@@ -91,20 +91,13 @@ ht_file_dump_listener_destroy(HT_FileDumpListener* listener)
 }
 
 void
-ht_file_dump_listener_callback(TEventPtr events, size_t size, HT_Boolean serialized, void* user_data)
+ht_file_dump_listener_callback(HT_Event* event, void* user_data)
 {
     HT_FileDumpListener* listener = (HT_FileDumpListener*)user_data;
 
     ht_mutex_lock(listener->mtx);
 
-    if (serialized)
-    {
-        ht_listener_buffer_process_serialized_events(&listener->buffer, events, size, _ht_file_dump_listener_flush, listener);
-    }
-    else
-    {
-        ht_listener_buffer_process_unserialized_events(&listener->buffer, events, size, _ht_file_dump_listener_flush, listener);
-    }
+    ht_listener_buffer_process_unserialized_events(&listener->buffer, event, _ht_file_dump_listener_flush, listener);
 
     ht_mutex_unlock(listener->mtx);
 }

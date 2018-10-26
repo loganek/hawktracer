@@ -1,7 +1,7 @@
 #ifndef HAWKTRACER_LISTENERS_TCP_LISTENER_H
 #define HAWKTRACER_LISTENERS_TCP_LISTENER_H
 
-#include <hawktracer/base_types.h>
+#include <hawktracer/events.h>
 
 #include <stddef.h>
 
@@ -13,7 +13,7 @@ HT_API HT_TCPListener* ht_tcp_listener_create(int port, size_t buffer_size, HT_E
 
 HT_API void ht_tcp_listener_destroy(HT_TCPListener* listener);
 
-HT_API void ht_tcp_listener_callback(TEventPtr events, size_t size, HT_Boolean serialized, void* user_data);
+HT_API void ht_tcp_listener_callback(HT_Event* event, void* user_data);
 
 HT_DECLS_END
 
