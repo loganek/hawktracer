@@ -21,6 +21,16 @@ HT_DECLS_BEGIN
 
 typedef struct _HT_Timeline HT_Timeline;
 
+/**
+ * Creates a timeline.
+ * 
+ * @param buffer_capacity a size of the internal buffer (in bytes).
+ * @param thread_safe enables or disables thread safety (i.e. pushing events from multiple threads). Enabling this feature might affect the performance, as the timeline will lock the mutex on every event push.
+ * @param listeners a string identifier of the listeners - this is needed if the timeline shares listeners with other timelines. If the timeline shouldn't share any listener, the value should be @a NULL.
+ * @param out_err a pointer to an HT_ErrorCode variable to store error code if the operation fails. Can be @a NULL.
+ *
+ * @return a pointer to the new timeline if operation completes successfully; otherwise @a NULL.
+ */
 HT_API HT_Timeline* ht_timeline_create(size_t buffer_capacity,
                                        HT_Boolean thread_safe,
                                        HT_Boolean serialize_events,
