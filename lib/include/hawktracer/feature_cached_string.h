@@ -9,8 +9,6 @@ HT_DECLS_BEGIN
 
 HT_API HT_ErrorCode ht_feature_cached_string_enable(HT_Timeline* timeline, HT_Boolean thread_safe);
 
-HT_API void ht_feature_cached_string_disable(HT_Timeline* timeline);
-
 HT_API uintptr_t ht_feature_cached_string_add_mapping(HT_Timeline* timeline, const char* label);
 
 HT_API void ht_feature_cached_string_push_map(HT_Timeline* timeline);

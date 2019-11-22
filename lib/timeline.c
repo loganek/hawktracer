@@ -11,7 +11,7 @@
 
 struct _HT_Timeline
 {
-    void* features[HT_TIMELINE_MAX_FEATURES];
+    HT_TimelineFeature features[HT_TIMELINE_MAX_FEATURES];
     size_t buffer_capacity;
     size_t buffer_usage;
     HT_Byte* buffer;
@@ -78,7 +78,7 @@ ht_timeline_push_event(HT_Timeline* timeline, HT_Event* event)
             ht_timeline_flush(timeline);
         }
 
-        if (timeline->buffer_capacity < klass->type_info->size) 
+        if (timeline->buffer_capacity < klass->type_info->size)
         {
             ht_timeline_listener_container_notify_listeners(timeline->listeners, (TEventPtr)event, klass->type_info->size, timeline->serialize_events);
         }
@@ -105,16 +105,35 @@ ht_timeline_flush(HT_Timeline* timeline)
     }
 }
 
-void
-ht_timeline_set_feature(HT_Timeline* timeline, size_t feature_id, void* feature)
+HT_ErrorCode
+ht_timeline_set_feature(HT_Timeline* timeline, size_t feature_id, void* feature, HT_FeatureDestroyCallback cb)
 {
-    timeline->features[feature_id] = feature;
+    if (feature_id >= HT_TIMELINE_MAX_FEATURES)
+    {
+        cb(feature);
+        return HT_ERR_INVALID_ARGUMENT;
+    }
+
+    if (HT_TIMELINE_FEATURE_IS_VALID(timeline->features[feature_id]))
+    {
+        cb(feature);
+        return HT_ERR_FEATURE_ID_ALREADY_USED;
+    }
+
+    ht_timeline_feature_init(&timeline->features[feature_id], feature, cb);
+
+    return HT_ERR_OK;
 }
 
 void*
 ht_timeline_get_feature(HT_Timeline* timeline, size_t feature_id)
 {
-    return timeline->features[feature_id];
+    if (!HT_TIMELINE_FEATURE_IS_VALID(timeline->features[feature_id]))
+    {
+        return NULL;
+    }
+
+    return timeline->features[feature_id].ptr;
 }
 
 
@@ -217,10 +236,9 @@ ht_timeline_destroy(HT_Timeline* timeline)
 
     for (i = 0; i < sizeof(timeline->features) / sizeof(timeline->features[0]); i++)
     {
-        if (timeline->features[i])
+        if (HT_TIMELINE_FEATURE_IS_VALID(timeline->features[i]))
         {
-            ht_feature_disable(timeline, i);
-            timeline->features[i] = NULL;
+            ht_timeline_feature_deinit(&timeline->features[i]);
         }
     }
 

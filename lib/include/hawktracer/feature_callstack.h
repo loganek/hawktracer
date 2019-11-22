@@ -10,8 +10,6 @@ HT_DECLS_BEGIN
 
 HT_API HT_ErrorCode ht_feature_callstack_enable(HT_Timeline* timeline);
 
-HT_API void ht_feature_callstack_disable(HT_Timeline* timeline);
-
 HT_API void ht_feature_callstack_start(HT_Timeline* timeline, HT_CallstackBaseEvent* event);
 
 HT_API void ht_feature_callstack_stop(HT_Timeline* timeline);

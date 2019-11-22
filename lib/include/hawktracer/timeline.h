@@ -19,11 +19,16 @@
 
 HT_DECLS_BEGIN
 
+/**
+ * A type of a callback which gets called when a timeline destroys the feature.
+ */
+typedef void(*HT_FeatureDestroyCallback)(void*);
+
 typedef struct _HT_Timeline HT_Timeline;
 
 /**
  * Creates a timeline.
- * 
+ *
  * @param buffer_capacity a size of the internal buffer (in bytes).
  * @param thread_safe enables or disables thread safety (i.e. pushing events from multiple threads). Enabling this feature might affect the performance, as the timeline will lock the mutex on every event push.
  * @param listeners a string identifier of the listeners - this is needed if the timeline shares listeners with other timelines. If the timeline shouldn't share any listener, the value should be @a NULL.
@@ -90,10 +95,41 @@ HT_API void ht_timeline_push_event(HT_Timeline* timeline, HT_Event* event);
  */
 HT_API void ht_timeline_flush(HT_Timeline* timeline);
 
-HT_API void ht_timeline_set_feature(HT_Timeline* timeline, size_t feature_id, void* feature);
+/**
+ * Registers a feature to a timeline.
+ *
+ * Each feature must be registered to a timeline with unique identifier. The identifier
+ * is later on used to retrieve the pointer to the feature using ht_timeline_get_feature().
+ *
+ * @param timeline the timeline.
+ * @param feature_id an identifier used to register the feature to the timeline.
+ * @param feature a pointer to the feature. The function takes ownershp of the pointer. The memory
+ * pointed by the pointer and all the other resources used by the feature will be automatically
+ * released by the library using the destroy callback.
+ * @param destroy_callback a destroy callback of the feature. The callback should release all the resources
+ * used by the feature, including deleting the memory occupied by the feature itself.
+ *
+ * @return #HT_ERR_OK if registration completed successfully; otherwise, approperiate error code.
+ */
+HT_API HT_ErrorCode ht_timeline_set_feature(HT_Timeline* timeline, size_t feature_id, void* feature, HT_FeatureDestroyCallback destroy_callback);
 
+/**
+ * Returns a pointer to the feature registered with specific ID.
+ *
+ * @param timeline the timeline.
+ * @param feature_id the identifier of the feature.
+ *
+ * @return a pointer to the feature registered with the specified ID; otherwise, @a NULL.
+ */
 HT_API void* ht_timeline_get_feature(HT_Timeline* timeline, size_t feature_id);
 
+/**
+ * Returns a pointer to the event ID provider assigned to the specified timeline.
+ *
+ * @param timelnie the timeline.
+ *
+ * @return a pointer to the event ID provider.
+ */
 HT_API HT_EventIdProvider* ht_timeline_get_id_provider(HT_Timeline* timeline);
 
 /**

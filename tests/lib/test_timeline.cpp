@@ -250,3 +250,64 @@ TEST_F(TestTimeline, PushingLargeEventShouldNotCrashApplication)
     ht_timeline_unregister_all_listeners(timeline);
     ht_timeline_destroy(timeline);
 }
+
+struct DummyFeature
+{
+    bool is_destroyed = false;
+};
+
+static void destroy_dummy_feature(void* f)
+{
+    auto feature = static_cast<DummyFeature*>(f);
+    feature->is_destroyed = true;
+}
+
+TEST_F(TestTimeline, SettingFeatureWithUsedIDShouldFail)
+{
+    // Arrange
+    DummyFeature feature1, feature2;
+    ht_timeline_set_feature(_timeline, 10, &feature1, destroy_dummy_feature);
+
+    // Act
+    HT_ErrorCode err = ht_timeline_set_feature(_timeline, 10, &feature2, destroy_dummy_feature);
+
+    // Assert
+    ASSERT_EQ(HT_ERR_FEATURE_ID_ALREADY_USED, err);
+    ASSERT_TRUE(feature2.is_destroyed);
+}
+
+TEST_F(TestTimeline, SettingFeatureWithInvalidIDShouldFail)
+{
+    // Arrange
+    DummyFeature feature;
+
+    // Act
+    HT_ErrorCode err = ht_timeline_set_feature(_timeline, HT_TIMELINE_MAX_FEATURES, &feature, destroy_dummy_feature);
+
+    // Assert
+    ASSERT_EQ(HT_ERR_INVALID_ARGUMENT, err);
+    ASSERT_TRUE(feature.is_destroyed);
+}
+
+TEST_F(TestTimeline, GetFeatureShouldReturnValidFeatureIfTheFeatureIsSet)
+{
+    // Arrange
+    DummyFeature feature;
+    ht_timeline_set_feature(_timeline, 10, &feature, destroy_dummy_feature);
+
+    // Act
+    void* f = ht_timeline_get_feature(_timeline, 10);
+
+    // Assert
+    ASSERT_EQ(f, &feature);
+}
+
+TEST_F(TestTimeline, GetFeatureShouldReturnNullIfTheFeatureIsNotSet)
+{
+    // Arrange
+    // Act
+    void* f = ht_timeline_get_feature(_timeline, 10);
+
+    // Assert
+    ASSERT_EQ(f, nullptr);
+}

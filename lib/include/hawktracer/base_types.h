@@ -61,7 +61,9 @@ typedef enum
     /** Format of an input data is invalid. */
     HT_ERR_INVALID_FORMAT,
     /** Invalid argument */
-    HT_ERR_INVALID_ARGUMENT
+    HT_ERR_INVALID_ARGUMENT,
+    /** Feature with given ID is already registered in the timeline. */
+    HT_ERR_FEATURE_ID_ALREADY_USED
 } HT_ErrorCode;
 
 /** Defines supported byte ordering */

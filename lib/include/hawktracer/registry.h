@@ -6,21 +6,6 @@
 HT_DECLS_BEGIN
 
 /**
- * A type of a callback which gets called when a timeline disables the feature.
- */
-typedef void (*HT_FeatureDisableCallback)(HT_Timeline*);
-
-/**
- * Registers new a new feature in the system.
- *
- * @param feature_id a feature identifier.
- * @param disable_callback a function which gets called when timeline disables the feature.
- *
- * @returns #HT_ERR_OK, if registration completed successfully; otherwise, appropriate error code.
- */
-HT_API HT_ErrorCode ht_registry_register_feature(uint32_t feature_id, HT_FeatureDisableCallback disable_callback);
-
-/**
  * Registers new event klass in the system, or gets identifier if klass is already registered.
  *
  * @param event_klass a pointer to a klass definition.

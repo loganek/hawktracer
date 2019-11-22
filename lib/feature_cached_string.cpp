@@ -31,7 +31,8 @@ typedef struct
         if (feature->lock) ht_mutex_unlock(feature->lock); \
     } while (0)
 
-static void ht_feature_cached_string_free_(HT_FeatureCachedString* f)
+static void
+ht_feature_cached_string_free_(HT_FeatureCachedString* f)
 {
     if (f->lock)
     {
@@ -41,6 +42,15 @@ static void ht_feature_cached_string_free_(HT_FeatureCachedString* f)
     f->~HT_FeatureCachedString();
 #endif /* __cplusplus */
     ht_free(f);
+}
+
+static void
+ht_feature_cached_string_destroy_(void* f)
+{
+    HT_FeatureCachedString* feature = (HT_FeatureCachedString*)f;
+
+    ht_bag_void_ptr_deinit(&feature->cached_data);
+    ht_feature_cached_string_free_(feature);
 }
 
 HT_ErrorCode
@@ -80,19 +90,9 @@ ht_feature_cached_string_enable(HT_Timeline* timeline, HT_Boolean thread_safe)
         return error_code;
     }
 
-    ht_timeline_set_feature(timeline, HT_FEATURE_CACHED_STRING, feature);
+    ht_timeline_set_feature(timeline, HT_FEATURE_CACHED_STRING, feature, ht_feature_cached_string_destroy_);
 
     return error_code;
-}
-
-void
-ht_feature_cached_string_disable(HT_Timeline* timeline)
-{
-    HT_FeatureCachedString* feature = HT_TIMELINE_FEATURE(timeline, HT_FEATURE_CACHED_STRING, HT_FeatureCachedString);
-
-    ht_bag_void_ptr_deinit(&feature->cached_data);
-    ht_feature_cached_string_free_(feature);
-    ht_timeline_set_feature(timeline, HT_FEATURE_CACHED_STRING, NULL);
 }
 
 static uintptr_t

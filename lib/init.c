@@ -2,7 +2,6 @@
 #include "hawktracer/init.h"
 #include "hawktracer/scoped_tracepoint.h"
 #include "internal/registry.h"
-#include "internal/feature.h"
 
 #ifdef HT_USE_PTHREADS
 #  include "hawktracer/posix_mapped_tracepoint.h"
@@ -28,8 +27,6 @@ ht_init(int argc, char** argv)
     HT_REGISTER_EVENT_KLASS(HT_CallstackStringEvent);
     HT_REGISTER_EVENT_KLASS(HT_StringMappingEvent);
     HT_REGISTER_EVENT_KLASS(HT_SystemInfoEvent);
-
-    ht_feature_register_core_features();
 
 #ifdef HT_USE_PTHREADS
     _ht_posix_mapped_tracepoint_init();

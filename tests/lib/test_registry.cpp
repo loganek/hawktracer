@@ -67,13 +67,3 @@ TEST(TestRegistry, RegisterListenerTwiceShouldFail)
     ht_timeline_listener_container_unref(container2);
     ht_timeline_listener_container_unref(container);
 }
-
-TEST(TestRegistry, RegisterTheSameFeatureTwiceShouldFail)
-{
-    // Arrange
-    uint32_t feature_id = HT_TIMELINE_MAX_FEATURES - 1;
-
-    // Act & Assert
-    ASSERT_EQ(HT_ERR_OK, ht_registry_register_feature(feature_id, (HT_FeatureDisableCallback)1));
-    ASSERT_EQ(HT_ERR_FEATURE_ALREADY_REGISTERED, ht_registry_register_feature(feature_id, (HT_FeatureDisableCallback)1));
-}

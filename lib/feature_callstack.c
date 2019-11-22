@@ -8,6 +8,14 @@ typedef struct
     HT_Stack stack;
 } HT_FeatureCallstack;
 
+static void
+ht_feature_callstack_destroy_(void* f)
+{
+    HT_FeatureCallstack* feature = (HT_FeatureCallstack*)f;
+    ht_stack_deinit(&feature->stack);
+    ht_free(feature);
+}
+
 HT_ErrorCode
 ht_feature_callstack_enable(HT_Timeline* timeline)
 {
@@ -27,18 +35,9 @@ ht_feature_callstack_enable(HT_Timeline* timeline)
         return error_code;
     }
 
-    ht_timeline_set_feature(timeline, HT_FEATURE_CALLSTACK, feature);
+    ht_timeline_set_feature(timeline, HT_FEATURE_CALLSTACK, feature, ht_feature_callstack_destroy_);
 
     return HT_ERR_OK;
-}
-
-void
-ht_feature_callstack_disable(HT_Timeline* timeline)
-{
-    HT_FeatureCallstack* f = HT_TIMELINE_FEATURE(timeline, HT_FEATURE_CALLSTACK, HT_FeatureCallstack);
-    ht_stack_deinit(&f->stack);
-    ht_free(f);
-    ht_timeline_set_feature(timeline, HT_FEATURE_CALLSTACK, NULL);
 }
 
 void ht_feature_callstack_start(HT_Timeline* timeline, HT_CallstackBaseEvent* event)

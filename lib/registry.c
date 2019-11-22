@@ -2,7 +2,6 @@
 #include "hawktracer/core_events.h"
 #include "internal/bag.h"
 #include "internal/hash.h"
-#include "internal/feature.h"
 #include "internal/registry.h"
 #include "internal/mutex.h"
 #include "internal/timeline_listener_container.h"
@@ -13,10 +12,8 @@
 
 static HT_BagVoidPtr event_klass_register;
 static HT_BagVoidPtr listeners_register;
-static HT_FeatureDisableCallback feature_disable_callback[HT_TIMELINE_MAX_FEATURES];
 
 static HT_Mutex* listeners_register_mutex;
-static HT_Mutex* features_register_mutex;
 static HT_Mutex* event_klass_registry_register_mutex;
 
 #define HT_CREATE_MUTEX_(mutex_var, error_code_var, label_if_fails) \
@@ -28,24 +25,6 @@ static HT_Mutex* event_klass_registry_register_mutex;
             goto label_if_fails; \
         } \
     } while(0)
-
-HT_ErrorCode ht_registry_register_feature(uint32_t feature_id, HT_FeatureDisableCallback disable_callback)
-{
-    assert(disable_callback);
-    assert(feature_id < HT_TIMELINE_MAX_FEATURES);
-
-    ht_mutex_lock(features_register_mutex);
-
-    if (!feature_disable_callback[feature_id])
-    {
-        feature_disable_callback[feature_id] = disable_callback;
-        ht_mutex_unlock(features_register_mutex);
-        return HT_ERR_OK;
-    }
-
-    ht_mutex_unlock(features_register_mutex);
-    return HT_ERR_FEATURE_ALREADY_REGISTERED;
-}
 
 HT_ErrorCode
 ht_registry_init(void)
@@ -65,14 +44,11 @@ ht_registry_init(void)
     }
 
     HT_CREATE_MUTEX_(listeners_register_mutex, error_code, error_listeners_mutex);
-    HT_CREATE_MUTEX_(features_register_mutex, error_code, error_features_mutex);
     HT_CREATE_MUTEX_(event_klass_registry_register_mutex, error_code, error_event_klass_registry_mutex);
 
     goto done;
 
 error_event_klass_registry_mutex:
-    ht_mutex_destroy(features_register_mutex);
-error_features_mutex:
     ht_mutex_destroy(listeners_register_mutex);
 error_listeners_mutex:
     ht_bag_void_ptr_deinit(&listeners_register);
@@ -118,7 +94,6 @@ ht_registry_deinit(void)
         ht_timeline_listener_container_unref((HT_TimelineListenerContainer*)listeners_register.data[i]);
     }
 
-    ht_mutex_destroy(features_register_mutex);
     ht_mutex_destroy(event_klass_registry_register_mutex);
     ht_mutex_destroy(listeners_register_mutex);
     ht_bag_void_ptr_deinit(&listeners_register);
@@ -170,15 +145,6 @@ ht_registry_register_listener_container(const char* name, HT_TimelineListenerCon
     ht_mutex_unlock(listeners_register_mutex);
 
     return HT_ERR_OK;
-}
-
-void
-ht_feature_disable(HT_Timeline *timeline, size_t id)
-{
-    assert(timeline);
-    assert(feature_disable_callback[id]);
-
-    feature_disable_callback[id](timeline);
 }
 
 #define REGISTRY_LISETNER_BUFF_SIZE 4096
@@ -276,15 +242,4 @@ ht_registry_push_registry_klasses_to_listener(HT_TimelineListenerCallback callba
     }
 
     return total_size;
-}
-
-
-#include "hawktracer/feature_cached_string.h"
-#include "hawktracer/feature_callstack.h"
-
-void
-ht_feature_register_core_features(void)
-{
-    ht_registry_register_feature(HT_FEATURE_CALLSTACK, ht_feature_callstack_disable);
-    ht_registry_register_feature(HT_FEATURE_CACHED_STRING, ht_feature_cached_string_disable);
 }
